@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  api:
+    image: easy-api-express-typescript
+    container_name: easy-api-express-typescript
+    build: .
+    environment:
+      PORT: 3579
+    ports:
+      - '3579:3579'
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
